@@ -10,6 +10,7 @@
     android:paddingVertical="32dp"
     tools:context=".MainActivity">
 
+    <!-- Male Card -->
     <androidx.cardview.widget.CardView
         android:id="@+id/card1"
         android:layout_width="0dp"
@@ -29,12 +30,14 @@
             android:gravity="center"
             android:orientation="vertical">
 
+            <!-- Male Icon -->
             <androidx.appcompat.widget.AppCompatImageView
                 android:layout_width="70dp"
                 android:layout_height="70dp"
                 android:layout_marginBottom="6dp"
                 android:src="@drawable/ic_male" />
 
+            <!-- Card Title -->
             <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -45,6 +48,7 @@
         </androidx.appcompat.widget.LinearLayoutCompat>
     </androidx.cardview.widget.CardView>
 
+    <!-- Female Card -->
     <androidx.cardview.widget.CardView
         android:id="@+id/card2"
         android:layout_width="0dp"
@@ -63,12 +67,14 @@
             android:gravity="center"
             android:orientation="vertical">
 
+            <!-- Female Icon -->
             <androidx.appcompat.widget.AppCompatImageView
                 android:layout_width="70dp"
                 android:layout_height="70dp"
                 android:layout_marginBottom="6dp"
                 android:src="@drawable/ic_female" />
 
+            <!-- Card Title -->
             <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -80,10 +86,11 @@
         </androidx.appcompat.widget.LinearLayoutCompat>
     </androidx.cardview.widget.CardView>
 
+    <!-- Height Card -->
     <androidx.cardview.widget.CardView
         android:id="@+id/card3"
         android:layout_width="0dp"
-        android:layout_height="150dp"
+        android:layout_height="wrap_content"
         app:cardBackgroundColor="@color/selected"
         app:cardCornerRadius="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -95,21 +102,196 @@
 
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <!-- Card Title -->
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/height"
+                android:textColor="@color/text" />
+
+            <!-- Height Value -->
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvHeight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/centimeters"
+                android:textSize="38sp"
+                android:textStyle="bold" />
+
+            <!-- Range Slider -->
+            <com.google.android.material.slider.RangeSlider
+                android:id="@+id/rsHeight"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/range_description"
+                android:stepSize="1"
+                android:valueFrom="120"
+                android:valueTo="200" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Weight Card -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardWeight"
+        android:layout_width="0dp"
+        android:layout_height="150dp"
+        android:layout_marginEnd="16dp"
+        app:cardBackgroundColor="@color/selected"
+        app:cardCornerRadius="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/cardAge"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/card3"
+        app:layout_constraintVertical_bias="0.2">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
             android:orientation="vertical">
 
+            <!-- Card Title -->
             <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/age"
-                android:textColor="@color/text"
-                android:textSize="30sp" />
+                android:text="@string/weight">
+            </androidx.appcompat.widget.AppCompatTextView>
 
-            <SeekBar
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+            <!-- Weight Value -->
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/weight_value"
+                android:textSize="38sp"
+                android:textStyle="bold">
+            </androidx.appcompat.widget.AppCompatTextView>
+
+            <!-- Buttons Layout -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <!-- Minus button -->
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnWeightLess"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_marginEnd="16dp"
+                    style="@style/RoundButtonStyle"
+                    android:text="-"
+                    android:textColor="@color/selected"
+                    android:textSize="30sp"
+                    android:textStyle="bold"
+                    android:layout_gravity="center"/>
+
+                <!-- Add button -->
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnWeightAdd"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    style="@style/RoundButtonStyle"
+                    android:text="+"
+                    android:textColor="@color/selected"
+                    android:textSize="25sp"
+                    android:textStyle="bold"
+                    android:layout_gravity="center"/>
+            </LinearLayout>
         </androidx.appcompat.widget.LinearLayoutCompat>
     </androidx.cardview.widget.CardView>
+
+    <!-- Age Card -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardAge"
+        android:layout_width="0dp"
+        android:layout_height="150dp"
+        app:cardBackgroundColor="@color/selected"
+        app:cardCornerRadius="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/cardWeight"
+        app:layout_constraintTop_toBottomOf="@id/card3"
+        app:layout_constraintVertical_bias="0.2">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <!-- Card Title -->
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/age_title">
+            </androidx.appcompat.widget.AppCompatTextView>
+
+            <!-- Age Value -->
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvAgeValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/age_value"
+                android:textSize="38sp"
+                android:textStyle="bold">
+            </androidx.appcompat.widget.AppCompatTextView>
+
+            <!-- Buttons Layout -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <!-- Minus button -->
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnAgeLess"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_marginEnd="16dp"
+                    style="@style/RoundButtonStyle"
+                    android:text="-"
+                    android:textColor="@color/selected"
+                    android:textSize="30sp"
+                    android:textStyle="bold"
+                    android:layout_gravity="center"/>
+
+                <!-- Add button -->
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnAgeAdd"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    style="@style/RoundButtonStyle"
+                    android:text="+"
+                    android:textColor="@color/selected"
+                    android:textSize="25sp"
+                    android:textStyle="bold"
+                    android:layout_gravity="center"/>
+            </LinearLayout>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Calculate Button -->
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/is_selected"
+        android:padding="16dp"
+        android:text="@string/calculate"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardWeight"
+        app:layout_constraintVertical_bias="0.746">
+    </androidx.appcompat.widget.AppCompatButton>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

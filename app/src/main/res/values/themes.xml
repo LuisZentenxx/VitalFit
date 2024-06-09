@@ -5,5 +5,10 @@
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
 
+    <!-- Gradient Card View -->
+    <style name="CardView.">
+        <item name="android:foreground">@drawable/gradient_card</item>
+    </style>
+
     <style name="Theme.VitalFit" parent="Base.Theme.VitalFit" />
 </resources>

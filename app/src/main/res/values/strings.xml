@@ -1,6 +1,13 @@
 <resources>
     <string name="app_name">VitalFit</string>
-    <string name="male">Hombre</string>
-    <string name="female">Mujer</string>
-    <string name="age">Edad</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="height">Height</string>
+    <string name="centimeters">120 cm</string>
+    <string name="weight">Weight</string>
+    <string name="weight_value">60</string>
+    <string name="age_title">Age</string>
+    <string name="age_value">20</string>
+    <string name="calculate">Calculate</string>
+    <string name="range_description">Rango</string>
 </resources>
