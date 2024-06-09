@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <style name="RoundButtonStyle">
-        <item name="android:background">@drawable/rounded_button</item>
-        <item name="android:src">@drawable/ic_add</item>
-        <item name="android:scaleType">centerInside</item>
-    </style>
-</resources>

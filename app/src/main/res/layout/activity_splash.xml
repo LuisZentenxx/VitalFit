@@ -3,11 +3,37 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
-    android:background="@drawable/gradient_background"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/gradient_background"
     tools:context=".SplashActivity">
 
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/splashTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/ubuntu_bolditalic"
+        android:layout_margin="20dp"
+        android:gravity="center"
+        android:text="@string/title_splashscreen"
+        android:textColor="@color/selected"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/ubuntu_mediumitalic"
+        android:gravity="center"
+        android:text="Luis Zenteno"
+        android:textColor="@color/selected"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/splashTitle"
+        app:layout_constraintVertical_bias="0.854" />
 </androidx.constraintlayout.widget.ConstraintLayout>

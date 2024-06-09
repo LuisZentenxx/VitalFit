@@ -24,6 +24,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0">
 
+        <!-- Parent Layout -->
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -42,9 +43,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/male"
+                android:fontFamily="@font/ubuntu_bold"
                 android:textColor="@color/text"
-                android:textSize="20sp"
-                android:textStyle="bold" />
+                android:textSize="20sp">
+            </androidx.appcompat.widget.AppCompatTextView>
         </androidx.appcompat.widget.LinearLayoutCompat>
     </androidx.cardview.widget.CardView>
 
@@ -82,7 +84,8 @@
                 android:text="@string/female"
                 android:textColor="@color/text"
                 android:textSize="20sp"
-                android:textStyle="bold" />
+                android:fontFamily="@font/ubuntu_bold"
+                />
         </androidx.appcompat.widget.LinearLayoutCompat>
     </androidx.cardview.widget.CardView>
 
@@ -112,16 +115,18 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/height"
+                android:fontFamily="@font/ubuntu_medium"
                 android:textColor="@color/text" />
 
             <!-- Height Value -->
             <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/tvHeight"
+                android:id="@+id/tvHeightValue"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/centimeters"
+                android:fontFamily="@font/ubuntu_bold"
                 android:textSize="38sp"
-                android:textStyle="bold" />
+                android:textColor="@color/text"/>
 
             <!-- Range Slider -->
             <com.google.android.material.slider.RangeSlider
@@ -143,13 +148,14 @@
         android:layout_height="150dp"
         android:layout_marginEnd="16dp"
         app:cardBackgroundColor="@color/selected"
-        app:cardCornerRadius="20dp"
+        app:cardCornerRadius="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/cardAge"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/card3"
         app:layout_constraintVertical_bias="0.2">
 
+        <!-- Parent Layout -->
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -160,49 +166,51 @@
             <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/weight">
+                android:text="@string/weight"
+                android:fontFamily="@font/ubuntu_medium">
             </androidx.appcompat.widget.AppCompatTextView>
 
             <!-- Weight Value -->
             <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvWeightValue"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/weight_value"
+                tools:text="60 kg"
                 android:textSize="38sp"
-                android:textStyle="bold">
+                android:textColor="@color/text"
+                android:fontFamily="@font/ubuntu_bold">
             </androidx.appcompat.widget.AppCompatTextView>
 
             <!-- Buttons Layout -->
-            <LinearLayout
-                android:layout_width="wrap_content"
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:gravity="center">
 
                 <!-- Minus button -->
-                <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/btnWeightLess"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/btnMinusWeight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/text"
+                    android:src="@drawable/substract"
+                    app:tint="@color/selected"
                     android:layout_marginEnd="16dp"
-                    style="@style/RoundButtonStyle"
-                    android:text="-"
-                    android:textColor="@color/selected"
-                    android:textSize="30sp"
-                    android:textStyle="bold"
-                    android:layout_gravity="center"/>
+                    android:contentDescription="@string/sub_weight_value_desc"/>
 
                 <!-- Add button -->
-                <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/btnWeightAdd"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    style="@style/RoundButtonStyle"
-                    android:text="+"
-                    android:textColor="@color/selected"
-                    android:textSize="25sp"
-                    android:textStyle="bold"
-                    android:layout_gravity="center"/>
-            </LinearLayout>
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/btnAddWeight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/text"
+                    android:src="@drawable/plus"
+                    app:tint="@color/selected"
+                    android:contentDescription="@string/weight_value_desc"
+                    />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
         </androidx.appcompat.widget.LinearLayoutCompat>
     </androidx.cardview.widget.CardView>
 
@@ -219,6 +227,7 @@
         app:layout_constraintTop_toBottomOf="@id/card3"
         app:layout_constraintVertical_bias="0.2">
 
+        <!-- Parent Layout -->
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -229,7 +238,8 @@
             <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/age_title">
+                android:text="@string/age_title"
+                android:fontFamily="@font/ubuntu_medium">
             </androidx.appcompat.widget.AppCompatTextView>
 
             <!-- Age Value -->
@@ -237,54 +247,53 @@
                 android:id="@+id/tvAgeValue"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/age_value"
+                tools:text="25"
                 android:textSize="38sp"
-                android:textStyle="bold">
+                android:fontFamily="@font/ubuntu_bold"
+                android:textColor="@color/text">
             </androidx.appcompat.widget.AppCompatTextView>
 
             <!-- Buttons Layout -->
-            <LinearLayout
+            <androidx.appcompat.widget.LinearLayoutCompat
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
                 <!-- Minus button -->
-                <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/btnAgeLess"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/btnMinusAge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/text"
+                    android:src="@drawable/substract"
+                    app:tint="@color/selected"
                     android:layout_marginEnd="16dp"
-                    style="@style/RoundButtonStyle"
-                    android:text="-"
-                    android:textColor="@color/selected"
-                    android:textSize="30sp"
-                    android:textStyle="bold"
-                    android:layout_gravity="center"/>
+                    android:contentDescription="@string/sub_weight_value_desc"/>
 
                 <!-- Add button -->
-                <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/btnAgeAdd"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    style="@style/RoundButtonStyle"
-                    android:text="+"
-                    android:textColor="@color/selected"
-                    android:textSize="25sp"
-                    android:textStyle="bold"
-                    android:layout_gravity="center"/>
-            </LinearLayout>
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/btnAddAge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/text"
+                    android:src="@drawable/plus"
+                    app:tint="@color/selected"
+                    android:contentDescription="@string/weight_value_desc"
+                    />
+            </androidx.appcompat.widget.LinearLayoutCompat>
         </androidx.appcompat.widget.LinearLayoutCompat>
     </androidx.cardview.widget.CardView>
 
     <!-- Calculate Button -->
     <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnCalculate"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="@color/is_selected"
         android:padding="16dp"
         android:text="@string/calculate"
         android:textSize="30sp"
-        android:textStyle="bold"
+        android:fontFamily="@font/ubuntu_bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"

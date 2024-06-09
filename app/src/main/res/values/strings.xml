@@ -3,11 +3,16 @@
     <string name="male">Male</string>
     <string name="female">Female</string>
     <string name="height">Height</string>
-    <string name="centimeters">120 cm</string>
+    <string name="centimeters">120 cms</string>
     <string name="weight">Weight</string>
-    <string name="weight_value">60</string>
+    <string name="weight_value">60 kg</string>
     <string name="age_title">Age</string>
     <string name="age_value">20</string>
     <string name="calculate">Calculate</string>
     <string name="range_description">Rango</string>
+    <string name="weight_value_desc">Add Weight Button</string>
+    <string name="sub_weight_value_desc">Substract Weight Button</string>
+    <string name="add_age_desc">Add Age Button</string>
+    <string name="title_splashscreen">VitalFit</string>
+    <string name="result_title">Resultado IMC</string>
 </resources>
