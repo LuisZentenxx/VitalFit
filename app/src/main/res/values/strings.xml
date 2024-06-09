@@ -15,4 +15,5 @@
     <string name="add_age_desc">Add Age Button</string>
     <string name="title_splashscreen">VitalFit</string>
     <string name="result_title">Resultado IMC</string>
+    <string name="result_imc_label">IMC</string>
 </resources>
