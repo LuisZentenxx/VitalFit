@@ -5,6 +5,11 @@
     <color name="background_app">#010959</color>
     <color name="buttons">#012232</color>
     <color name="text">#001A27</color>
-    <color name="selected">#F4F4FB</color>
+    <color name="selected">#E6E6EA</color>
     <color name="is_selected">#B8D1E8</color>
+
+    <color name="underweight">#11359F</color>
+    <color name="normal">#118C08</color>
+    <color name="overweight">#958411</color>
+    <color name="obese">#980A16</color>
 </resources>

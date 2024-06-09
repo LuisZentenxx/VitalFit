@@ -44,6 +44,10 @@ class MainActivity : AppCompatActivity() {
     // Calculate Button
     private lateinit var btnCalculate : Button
 
+    companion object{
+        const val IMC_KEY = "IMC_RESULT"
+    }
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -97,10 +101,8 @@ class MainActivity : AppCompatActivity() {
         }
 
         btnCalculate.setOnClickListener{
-            calculateIMC()
-            val intent = Intent(this, ResultActivity::class.java)
-            intent.putExtra("Imc", "${calculateIMC()}")
-            startActivity(intent)
+            val result = calculateIMC()
+            navigateToResultActivity(result)
         }
 
         btnMinusWeight.setOnClickListener{
@@ -121,12 +123,19 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    private fun navigateToResultActivity(result : Double){
+        val intent = Intent(this, ResultActivity::class.java)
+        intent.putExtra(IMC_KEY, result)
+        startActivity(intent)
+    }
+
     private fun calculateIMC() : Double {
         val decFormat = DecimalFormat("#.##")
         val imc = currentWeight / (currentHeight.toDouble()/100 * currentHeight.toDouble()/100)
-        val result = decFormat.format(imc).toDouble()
-        return result
+        return decFormat.format(imc).toDouble()
     }
+
+
 
     private fun setAge(){
         tvAgeValue.text = currentAge.toString()

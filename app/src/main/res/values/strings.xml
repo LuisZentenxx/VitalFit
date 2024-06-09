@@ -9,11 +9,24 @@
     <string name="age_title">Age</string>
     <string name="age_value">20</string>
     <string name="calculate">Calculate</string>
-    <string name="range_description">Rango</string>
+    <string name="recalculate">Re-Calculate</string>
+    <string name="range_description">Range</string>
     <string name="weight_value_desc">Add Weight Button</string>
     <string name="sub_weight_value_desc">Substract Weight Button</string>
     <string name="add_age_desc">Add Age Button</string>
     <string name="title_splashscreen">VitalFit</string>
-    <string name="result_title">Resultado IMC</string>
+    <string name="result_title">Your Result</string>
     <string name="result_imc_label">IMC</string>
+    <string name="imc_status">Overweight</string>
+    <string name="imc_description">Tu aslajkaskajsd</string>
+    <string name="underweight">Underweight</string>
+    <string name="underweight_desc">You are underweight</string>
+    <string name="normal">Normal</string>
+    <string name="normal_desc">You are normal</string>
+    <string name="overweight">Overweight</string>
+    <string name="overweight_desc">you are overweight</string>
+    <string name="obese">Obese</string>
+    <string name="obese_desc">You are obese</string>
+    <string name="mbi_expected">MBI Expected</string>
+    <string name="mbi_expected_label">Your MBI should be</string>
 </resources>

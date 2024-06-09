@@ -16,7 +16,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:fontFamily="@font/ubuntu_bold"
-        android:gravity="center"
+        android:gravity="start"
         android:text="@string/result_title"
         android:textColor="@color/selected"
         android:textSize="40sp"
@@ -27,185 +27,82 @@
         app:layout_constraintVertical_bias="0.1">
     </androidx.appcompat.widget.AppCompatTextView>
 
+    <!-- Result Card -->
     <androidx.cardview.widget.CardView
-        android:id="@+id/cardImc"
+        android:id="@+id/tvResultImc"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="250dp"
         android:layout_margin="16dp"
-        app:cardCornerRadius="8dp"
-        app:cardElevation="4dp"
-        app:layout_constraintStart_toStartOf="parent"
+        app:cardCornerRadius="20dp"
+        app:cardBackgroundColor="@color/selected"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.218"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvResultTitle"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintVertical_bias="0.24"
-        >
-        <androidx.constraintlayout.widget.ConstraintLayout
+        app:layout_constraintVertical_bias="0.13">
+
+        <!-- Parent Layout -->
+        <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="16dp">
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
 
-            <!-- Image VitalFit -->
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/imageImc"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:src="@drawable/ic_life"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <!-- Card Label -->
+            <!-- IMC Status -->
             <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/tvImcLabel"
+                android:id="@+id/imcStatus"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
                 android:fontFamily="@font/ubuntu_bold"
-                android:text="@string/result_imc_label"
-                android:textColor="@color/text"
-                android:textSize="24sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@id/imageImc"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.516" />
+                android:layout_marginBottom="20dp"
+                tools:text="Overweight"
+                android:textSize="18sp">
+            </androidx.appcompat.widget.AppCompatTextView>
 
-            <!-- IMC Value -->
+            <!-- IMC Result Value -->
             <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/tvResultImc"
+                android:id="@+id/imcResultValue"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
-                android:fontFamily="@font/ubuntu_bolditalic"
-                android:padding="10dp"
+                android:fontFamily="@font/ubuntu_bold"
+                tools:text="29.32"
                 android:textColor="@color/text"
-                android:textSize="24sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:text="29.32" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
+                android:layout_marginBottom="20dp"
+                android:textSize="80sp">
+            </androidx.appcompat.widget.AppCompatTextView>
+
+            <!-- IMC Result Description -->
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/imcDesc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:lines="1"
+                android:fontFamily="@font/ubuntu_medium"
+                android:textColor="@color/text"
+                tools:text="akaslkasjdlakasndasdkasd">
+            </androidx.appcompat.widget.AppCompatTextView>
+        </androidx.appcompat.widget.LinearLayoutCompat>
     </androidx.cardview.widget.CardView>
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardWarning"
+    <!-- Calculate Button -->
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnReCalculate"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:background="@color/selected"
+        android:padding="16dp"
         android:layout_margin="16dp"
-        app:cardCornerRadius="8dp"
-        app:cardElevation="4dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardImc"
+        android:text="@string/recalculate"
+        android:textSize="30sp"
+        android:textColor="@color/text"
+        android:fontFamily="@font/ubuntu_bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintVertical_bias="0.1"
-        >
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="16dp">
-
-            <!-- Image VitalFit -->
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/imageWarning"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:src="@drawable/ic_sad"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <!-- Card Label -->
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/tvWarningLabel"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:fontFamily="@font/ubuntu_bold"
-                android:text="@string/result_imc_label"
-                android:textColor="@color/text"
-                android:textSize="24sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@id/imageWarning"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.516" />
-
-            <!-- IMC Value -->
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/tvResultWarning"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
-                android:fontFamily="@font/ubuntu_bolditalic"
-                android:padding="10dp"
-                android:textColor="@color/text"
-                android:textSize="24sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:text="29.32" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardStatus"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        app:cardCornerRadius="8dp"
-        app:cardElevation="4dp"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardImc"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintVertical_bias="0.1"
-        >
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvResultImc"
+        app:layout_constraintVertical_bias="0.746">
+    </androidx.appcompat.widget.AppCompatButton>
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="16dp">
-
-            <!-- Image VitalFit -->
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/imageStatus"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:src="@drawable/ic_sad"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <!-- Card Label -->
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/tvWishedLabel"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:fontFamily="@font/ubuntu_bold"
-                android:text="IMC Deseado"
-                android:textColor="@color/text"
-                android:textSize="20sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@id/imageStatus"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.516" />
-
-            <!-- IMC Value -->
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/tvResultWished"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
-                android:fontFamily="@font/ubuntu_bolditalic"
-                android:padding="10dp"
-                android:textColor="@color/text"
-                android:textSize="24sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:text="29.32" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>
